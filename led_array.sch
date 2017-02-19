@@ -795,4 +795,197 @@ F 3 "" H 2400 5550 50  0000 C CNN
 	1    2400 5550
 	1    0    0    -1  
 $EndComp
+Text GLabel 3550 4450 2    60   Input ~ 0
+col7
+Text GLabel 3550 4550 2    60   Input ~ 0
+col6
+Text GLabel 3550 4650 2    60   Input ~ 0
+col5
+Text GLabel 3550 4750 2    39   Input ~ 0
+col4
+Text GLabel 3550 4850 2    39   Input ~ 0
+col3
+Text GLabel 3550 4950 2    39   Input ~ 0
+col2
+Text GLabel 3550 5150 2    60   Input ~ 0
+col1
+Text GLabel 3550 5250 2    60   Input ~ 0
+row5
+Text GLabel 3550 5350 2    60   Input ~ 0
+row4
+Text GLabel 3550 5450 2    60   Input ~ 0
+row3
+Text GLabel 3550 5550 2    60   Input ~ 0
+row2
+Text GLabel 3550 5650 2    60   Input ~ 0
+row1
+Wire Wire Line
+	3400 5650 3550 5650
+Wire Wire Line
+	3550 5550 3400 5550
+Wire Wire Line
+	3400 5450 3550 5450
+Wire Wire Line
+	3550 5350 3400 5350
+Wire Wire Line
+	3400 5250 3550 5250
+Wire Wire Line
+	3550 5150 3400 5150
+Wire Wire Line
+	3400 4950 3550 4950
+Wire Wire Line
+	3550 4850 3400 4850
+Wire Wire Line
+	3400 4750 3550 4750
+Wire Wire Line
+	3550 4650 3400 4650
+Wire Wire Line
+	3400 4550 3550 4550
+Wire Wire Line
+	3550 4450 3400 4450
+$Comp
+L CONN_02X03 P?
+U 1 1 58A9D6B0
+P 5500 5150
+F 0 "P?" H 5500 5350 50  0000 C CNN
+F 1 "CONN_02X03" H 5500 4950 50  0000 C CNN
+F 2 "" H 5500 3950 50  0000 C CNN
+F 3 "" H 5500 3950 50  0000 C CNN
+	1    5500 5150
+	1    0    0    -1  
+$EndComp
+Text GLabel 5150 5050 0    39   Input ~ 0
+MISO
+Text GLabel 5150 5150 0    39   Input ~ 0
+SCK
+Text GLabel 5150 5250 0    39   Input ~ 0
+RST
+Text GLabel 5850 5150 2    39   Input ~ 0
+MOSI
+Wire Wire Line
+	5150 5050 5250 5050
+Wire Wire Line
+	5250 5150 5150 5150
+Wire Wire Line
+	5250 5250 5150 5250
+Wire Wire Line
+	5750 5150 5850 5150
+Text GLabel 3950 4850 2    39   Input ~ 0
+MISO
+Text GLabel 3950 4750 2    39   Input ~ 0
+MOSI
+Text GLabel 3950 4950 2    39   Input ~ 0
+SCK
+Wire Wire Line
+	3450 4750 3500 4750
+Wire Wire Line
+	3500 4750 3500 4800
+Wire Wire Line
+	3500 4800 3850 4800
+Wire Wire Line
+	3850 4800 3850 4750
+Wire Wire Line
+	3850 4750 3950 4750
+Connection ~ 3450 4750
+Wire Wire Line
+	3450 4850 3450 4900
+Wire Wire Line
+	3450 4900 3850 4900
+Wire Wire Line
+	3850 4900 3850 4850
+Wire Wire Line
+	3850 4850 3950 4850
+Connection ~ 3450 4850
+Wire Wire Line
+	3450 4950 3450 5000
+Wire Wire Line
+	3450 5000 3850 5000
+Wire Wire Line
+	3850 5000 3850 4950
+Wire Wire Line
+	3850 4950 3950 4950
+Connection ~ 3450 4950
+Text GLabel 1400 4450 0    39   Input ~ 0
+RST
+Wire Wire Line
+	1500 4450 1400 4450
+$Comp
+L +5V #PWR?
+U 1 1 58A9EBFC
+P 2400 3800
+F 0 "#PWR?" H 2400 3650 50  0001 C CNN
+F 1 "+5V" H 2400 3940 50  0000 C CNN
+F 2 "" H 2400 3800 50  0000 C CNN
+F 3 "" H 2400 3800 50  0000 C CNN
+	1    2400 3800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2400 3800 2400 4150
+$Comp
+L +5V #PWR?
+U 1 1 58A9F2C6
+P 5850 5050
+F 0 "#PWR?" H 5850 4900 50  0001 C CNN
+F 1 "+5V" H 5850 5190 50  0000 C CNN
+F 2 "" H 5850 5050 50  0000 C CNN
+F 3 "" H 5850 5050 50  0000 C CNN
+	1    5850 5050
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5850 5050 5750 5050
+$Comp
+L GND #PWR?
+U 1 1 58A9F451
+P 5850 5250
+F 0 "#PWR?" H 5850 5000 50  0001 C CNN
+F 1 "GND" H 5850 5100 50  0000 C CNN
+F 2 "" H 5850 5250 50  0000 C CNN
+F 3 "" H 5850 5250 50  0000 C CNN
+	1    5850 5250
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5850 5250 5750 5250
+$Comp
+L GND #PWR?
+U 1 1 58A9F7FF
+P 2400 7150
+F 0 "#PWR?" H 2400 6900 50  0001 C CNN
+F 1 "GND" H 2400 7000 50  0000 C CNN
+F 2 "" H 2400 7150 50  0000 C CNN
+F 3 "" H 2400 7150 50  0000 C CNN
+	1    2400 7150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2400 7150 2400 7050
+$Comp
+L C_Small C?
+U 1 1 58A9FCD3
+P 2650 4000
+F 0 "C?" H 2660 4070 50  0000 L CNN
+F 1 "C_Small" H 2660 3920 50  0000 L CNN
+F 2 "" H 2650 4000 50  0000 C CNN
+F 3 "" H 2650 4000 50  0000 C CNN
+	1    2650 4000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 58A9FD58
+P 2950 4000
+F 0 "#PWR?" H 2950 3750 50  0001 C CNN
+F 1 "GND" H 2950 3850 50  0000 C CNN
+F 2 "" H 2950 4000 50  0000 C CNN
+F 3 "" H 2950 4000 50  0000 C CNN
+	1    2950 4000
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2950 4000 2750 4000
+Wire Wire Line
+	2550 4000 2400 4000
+Connection ~ 2400 4000
 $EndSCHEMATC

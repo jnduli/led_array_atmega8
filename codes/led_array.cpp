@@ -23,9 +23,9 @@ void displayCharacters(Leds * leds){
 int main ()
 {
     Leds leds; 
-    //leds.lightAllLEDs();
-
+//    leds.lightAllLEDs();
     while (1){
-        displayCharacters(&leds);
+//        leds.lightAllLEDs();
+        leds.drawPattern();
     }
 }

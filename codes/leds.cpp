@@ -1,4 +1,4 @@
-#define F_CPUT 8000000UL
+#define F_CPU 1000000UL
 
 #include "leds.h"
 #include <avr/io.h>
@@ -28,9 +28,9 @@ void Leds:: lightLED ( int row, int col )
 void Leds:: turnOffLED( int row, int col )
 {
     PORTC &= ~( 1<< rows_pins[row] );
-    if ( col == 1 )
+    if ( col == 0 )
         PORTC |= ( 1<< cols_pins[col] );
-    else if (col < 8)
+    else if (col < 7)
         PORTB |=  ( 1<< cols_pins[col] );
     else
         PORTD |= ( 1<< cols_pins[col] );
@@ -41,10 +41,9 @@ void Leds:: lightAllLEDs ()
     for ( int i = 0; i<rows; i++ )
         for ( int j = 0; j <cols ; j++ ){
             lightLED(i,j);
-            _delay_ms(20);
-            //turnOffLED(i,j);
-            turnOffAllLEDs();
-            _delay_ms(20);
+            _delay_ms(10);
+            turnOffLED(i,j);
+            _delay_ms(10);
         }
 }
 
@@ -65,6 +64,7 @@ void Leds:: turnOffAllLEDs ()
 void Leds:: drawCharacter (const int A[3][5])
 {
     //drawing A
+    //
     int rows_char = 3;//sizeof(A)/ sizeof(A[0]);
     int cols_char = 5;//sizeof(A[0]) / sizeof(A[0][0]);
 
@@ -85,10 +85,9 @@ void Leds:: drawBuffer()
     for ( int i = 0; i< 5 ; i++ ){
         for ( int j =0 ; j< 10; j++ ) {
             if (buffer[i][j] == 1){
-                lightLED(j,i);
-                _delay_ms(1);
-                turnOffAllLEDs();
-                _delay_ms(1);
+                lightLED(i,j);
+                _delay_us(100);
+                turnOffLED(i,j);
             }
         }
     }
@@ -101,9 +100,9 @@ void Leds:: makePattern (int j)
     {
         if ( j >= pattern_col)
             j = 0;
-        setColumn( start, j );
-        start ++ ;
-        j++;
+        setColumn( start++, j++ );
+        //start ++ ;
+        //j++;
         //get all columns from j appending them into buffer
     }
 }
@@ -124,12 +123,10 @@ void Leds:: drawPattern ()
         if (dis > pattern_col)
             dis = 0;
         makePattern(dis);
-
-        int turns;
-        for ( int turns = 0 ; turns <100 ; turns ++ ){
+        for ( int turns = 0 ; turns <25 ; turns ++ ){
             drawBuffer();
         }
-        _delay_ms(100);
+//        _delay_ms(10);
         dis ++;
     }
 }

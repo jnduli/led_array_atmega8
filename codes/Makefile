@@ -112,7 +112,7 @@ OPTLEVEL=s
 # one of the valid "-c PROGRAMMER-ID" values 
 # described in the avrdude info page.
 # 
-AVRDUDE_PROGRAMMERID=usbasp-clone
+AVRDUDE_PROGRAMMERID=usbasp
 
 # port--serial or parallel port to which your 
 # hardware programmer is attached
@@ -163,7 +163,7 @@ LDFLAGS=-Wl,-Map,$(TRG).map -mmcu=$(MCU) \
 	-lm $(LIBS)
 
 ##### executables ####
-CC=avr-g++
+CC=avr-gcc
 OBJCOPY=avr-objcopy
 OBJDUMP=avr-objdump
 SIZE=avr-size

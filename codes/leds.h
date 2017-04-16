@@ -35,12 +35,15 @@ class Leds
         void drawBuffer();
         void makePattern( int j);
         void drawPattern();
+        void setColumn(int a, int b);
 
         //variables
+        //
+        static const int buffer_row = 5;
+        static const int buffer_col = 10;
+        static const int pattern_col = 12;
         int buffer [buffer_row][buffer_col];
-        const int buffer_row = 5;
-        const int buffer_col = 10;
-        const int pattern [][12] ={
+        const int pattern [5][pattern_col] ={
             {1,0,1,0,1,0,1,1,0,1,1,0},
             {1,0,1,1,0,1,1,0,1,1,0,1},
             {1,1,1,1,1,1,1,1,0,1,1,0},

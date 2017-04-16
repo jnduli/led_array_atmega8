@@ -56,11 +56,11 @@ void Leds:: turnOffAllLEDs ()
     PORTD = 0xff;
 }
 
-int[][] Leds:: makePattern ()
-{
+//int[][] Leds:: makePattern ()
+//{
     //looking to generate
     //HAPPY EASTER
-}
+//}
 
 void Leds:: drawCharacter (const int A[3][5])
 {
@@ -97,29 +97,37 @@ void Leds:: drawBuffer()
 void Leds:: makePattern (int j) 
 {
     int start = 0;
-    while ( start < buffer_size[1] )
+    while ( start < buffer_col )
     {
-        if ( j >= pattern_size[1])
+        if ( j >= pattern_col)
             j = 0;
-        set_column( start, j );
+        setColumn( start, j );
         start ++ ;
         j++;
         //get all columns from j appending them into buffer
     }
 }
-void draw_pattern () 
+
+void Leds:: setColumn(int buffer_column, int pattern_column )
+{
+    int column_length = buffer_row;
+    for ( int j = 0 ; j < column_length ; j++ ){
+        buffer [j][buffer_column] = pattern [j][ pattern_column];
+    }
+}
+
+void Leds:: drawPattern () 
 {
     int dis = 0;
     while (1) 
     {
-        if (dis > pattern_size[1])
+        if (dis > pattern_col)
             dis = 0;
-        make_pattern(dis);
+        makePattern(dis);
 
         int turns;
-        for ( turns = 0 ; turns <100 ; turns ++ )
-        {
-            draw_buffer();
+        for ( int turns = 0 ; turns <100 ; turns ++ ){
+            drawBuffer();
         }
         _delay_ms(100);
         dis ++;
